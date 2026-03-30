@@ -242,7 +242,7 @@ OS-Assignment1-Starter/
 
 ### Extensions to Install:
 - **GitLens** - Enhances Git capabilities and visualization
-- **Java Extension Pack** - Provides Java language support, debugging, and project management
+- **** - Provides Java language support, debugging, and project management
 - **Markdown All in One** - Useful for editing your markdown documentation files
 - You can follow these video tutorials to set up your environment and GitHub and Java integration in VS Code: [VS Code GitHub Integration Tutorial](https://www.youtube.com/watch?v=i_23KUAEtUM) and [Java Development in VS Code Tutorial](https://www.youtube.com/watch?v=BB0gZFpukJU)
 
