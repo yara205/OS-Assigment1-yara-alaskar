@@ -452,7 +452,7 @@ Submit a **text file** named: `YourName_StudentID_Assignment1.txt`
 Student Name: [Yara saud Alaskar]
 Student ID: [445052208]
 GitHub Username: [yara 205]
-Repository Link: https://github.com/yara205/OS-Assigment1-yara-alaskar/edit/main/README.md
+Repository Link: https://github.com/yara205/OS-Assigment1-yara-alaskar/tree/main
 Video Link: [Google Drive link - make sure it's accessible to anyone with the link]
 Date Submitted: April 2 ,2026
 ```
