@@ -317,8 +317,8 @@ public class SchedulerSimulation {
         System.out.println("\nWaiting Time Summary:");
         for (Process p : processMap.values()) {
             System.out.println(p.getName() +
-                    " | Burst: " + p.getBurstTime() +
-                    " | Waiting: " + p.getWaitingTime() + " ms");
+                    " | Burst Time: " + p.getBurstTime() +
+                    " | Waiting Time: " + p.getWaitingTime() + " ms");
         }
     }
 
