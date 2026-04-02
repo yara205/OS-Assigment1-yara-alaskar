@@ -31,6 +31,9 @@ class Process implements Runnable {
     private int remainingTime; // Time left for the process to finish its execution
     private int priority; // Priority of the process (not used in Round Robin but can be extended for
                           // other algorithms)
+    // ===== Feature 3: Waiting Time Tracking
+    private long creationTime;
+    private long waitingTime;
 
     // Constructor to initialize the process with name, burst time, and time quantum
     public Process(String name, int burstTime, int timeQuantum) {
@@ -39,7 +42,19 @@ class Process implements Runnable {
         this.timeQuantum = timeQuantum;
         this.remainingTime = burstTime; // Initially, remaining time is equal to the burst time
         this.priority = new Random().nextInt(5) + 1; // Assign a random priority between 1 and 10 (not used in this
-                                                     // simulation)
+        // ===== Feature 3: Initialize Waiting Time =====
+        // ===== Feature 3: Initialize Waiting Time =====
+        this.creationTime = System.currentTimeMillis();
+        this.waitingTime = 0; // simulation)
+    }
+
+    // Feature 3: Update Waiting Time
+    public void updateWaitingTime() {
+        waitingTime = System.currentTimeMillis() - creationTime;
+    }
+
+    public long getWaitingTime() {
+        return waitingTime;
     }
 
     // This method will be called when the thread for this process is started
@@ -153,6 +168,8 @@ class Process implements Runnable {
 }
 
 public class SchedulerSimulation {
+    static int contextswitches = 0;
+
     public static void main(String[] args) {
         // ⚠️ IMPORTANT: Put your student ID here to seed the random number generator
         // This makes your output unique to you - DO NOT forget to change this!
@@ -229,8 +246,10 @@ public class SchedulerSimulation {
         // Loop to manage the scheduling of processes
         while (!processQueue.isEmpty()) {
             // Get the next thread from the queue (FIFO)
-            Thread currentThread = processQueue.poll(); // Dequeues the next thread
-
+            Thread currentThread = processQueue.poll();
+            // // ===== Feature 3: Calculate Waiting Time =====Dequeues the next thread
+            // == Feature 2: increment Context Switche ==
+            contextswitches++;
             // Print the current process queue (list of process IDs in the queue)
             System.out.println(Colors.BOLD + Colors.MAGENTA + "┌─ Ready Queue " + "─".repeat(65) + Colors.RESET);
             System.out.print(Colors.MAGENTA + "│ " + Colors.RESET + Colors.BRIGHT_WHITE + "[" + Colors.RESET);
@@ -255,6 +274,8 @@ public class SchedulerSimulation {
                 // Wait for the thread to finish its time quantum before continuing to the next
                 // process
                 currentThread.join();
+                // Feature 3: Calculate Waiting Time
+                processMap.get(currentThread).updateWaitingTime();
             } catch (InterruptedException e) {
                 System.out.println("Main thread interrupted.");
             }
@@ -290,6 +311,15 @@ public class SchedulerSimulation {
         System.out.println(Colors.BOLD + Colors.BRIGHT_GREEN +
                 "╚════════════════════════════════════════════════════════════════════════════════╝" +
                 Colors.RESET + "\n");
+        // ==== Feature 2: Print Context Switches count ====
+        System.out.println(Colors.BRIGHT_YELLOW + "Total Context Switches: " + contextswitches + Colors.RESET); // Feature2
+        // Feature 3: Waiting Time Summary
+        System.out.println("\nWaiting Time Summary:");
+        for (Process p : processMap.values()) {
+            System.out.println(p.getName() +
+                    " | Burst: " + p.getBurstTime() +
+                    " | Waiting: " + p.getWaitingTime() + " ms");
+        }
     }
 
     // Method to add a process to the queue and map, while printing a "ready"
