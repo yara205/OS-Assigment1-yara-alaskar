@@ -13,87 +13,95 @@ Document your development process as you work on the assignment. Add entries sho
 
 ## Example Entry Format:
 
-### Entry 1 - [April 1, 2026, 2:30 PM]
-**What I did**: Forked the repository and set up my student ID
+### Entry 1 - [March 30, 2026, 8:00 PM]
 
-**Details**: 
-- Created GitHub account with university email
-- Forked the starter repository
-- Changed student ID on line 92 to my actual ID (441234567)
-- Compiled and ran the program successfully
+What I did: Started the assignment and set up the development environment.
 
-**Challenges**: Had to install JDK first because javac wasn't recognized
+Details: 
+- Created GitHub account using university email
+- Forked the repository
+- Downloaded the starter code
+- Opened project in VS Code
+- Ran the program to understand initial output
 
-**Solution**: Downloaded JDK 17 from Oracle website and set PATH variable
+Challenges: GitHub was new to me and I was not sure how to fork the repository.
 
-**Time spent**: 30 minutes
+Solution: Followed GitHub documentation and successfully forked the project.
+
+Time spent: 2 hours
 
 ---
 
 ## Your Development Log:
 
-### Entry 1 - [Date and Time]
-**What I did**: 
+---
 
-**Details**: 
+### Entry 2 - [March 30, 2026, 10:00 PM]
+What I did: Modified the code and added my student ID.
 
-**Challenges**: 
+Details: 
+- Located SchedulerSimulation.java file
+- Updated student ID in the main method
+- Compiled and executed the program
+- Observed how threads were created and scheduled
 
-**Solution**: 
+Challenges: I had difficulty understanding the flow of thread execution.
 
-**Time spent**: 
+Solution: Reviewed course notes and traced program output step by step.
+
+Time spent: 1 hours
+---
+
+### Entry 3 - [March 31, 2026, 5:00 AM]
+What I did: Implemented Feature 1 (Process Priority).
+
+Details: 
+- Added priority variable to Process class
+- Initialized random priority values
+- Displayed priority in ready queue output
+- Tested program after modification
+
+Challenges: Compilation errors occurred after adding new variable.
+
+Solution: Fixed variable scope and added getter method.
+
+Time spent: 1 hours
 
 ---
 
-### Entry 2 - [Date and Time]
-**What I did**: 
 
-**Details**: 
+### Entry 4 - [April 2, 2026, 4:00 PM ]
+What I did: Implemented Feature 2 (Context Switch Counter).
 
-**Challenges**: 
+Details: 
+- Added context switch counter
+- Incremented counter during scheduling
+- Displayed total context switches
+- Created Git commit for Feature 2
 
-**Solution**: 
+Challenges: Git commit failed due to missing user configuration.
 
-**Time spent**: 
+Solution: Configured git user.name and user.email.
 
----
-
-### Entry 3 - [Date and Time]
-**What I did**: 
-
-**Details**: 
-
-**Challenges**: 
-
-**Solution**: 
-
-**Time spent**: 
+Time spent: 2 hours
 
 ---
 
-### Entry 4 - [Date and Time]
-**What I did**: 
+### Entry 5 - [April 2, 2026, 7:00 PM]
+What I did: Implemented Feature 3 (Waiting Time Tracking).
 
-**Details**: 
+Details: 
+- Added waiting time variables
+- Calculated waiting time for each process
+- Displayed waiting time summary
+- Tested program and verified output
+- Pushed all commits to GitHub
 
-**Challenges**: 
+Challenges: Understanding how to calculate waiting time correctly.
 
-**Solution**: 
+Solution: Used system time and updated values after thread execution.
 
-**Time spent**: 
-
----
-
-### Entry 5 - [Date and Time]
-**What I did**: 
-
-**Details**: 
-
-**Challenges**: 
-
-**Solution**: 
-
-**Time spent**: 
+Time spent: 1\50 hours
 
 ---
 
@@ -111,11 +119,11 @@ Document your development process as you work on the assignment. Add entries sho
 ---
 
 ## Summary
+Total time spent on assignment: 4 Days
 
-**Total time spent on assignment**: [X hours]
+Most challenging part: Implementing waiting time calculation and understanding thread scheduling.
 
-**Most challenging part**: 
+Most interesting learning: Understanding how Round-Robin scheduling ensures fairness.
 
-**Most interesting learning**: 
+What I would do differently next time: I would plan features earlier and test after each small change.
 
-**What I would do differently next time**: 
